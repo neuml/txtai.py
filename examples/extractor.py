@@ -26,7 +26,7 @@ def run():
         "Final: Braves lose to the Phillies in the series opener, 5-0",
         "Lightning goaltender pulled, lose to Flyers 4-1",
         "Flyers 4 Lightning 1 final",
-        "Flyers win 4-1"
+        "Flyers win 4-1",
     ]
 
     # Run series of questions
@@ -43,5 +43,6 @@ def run():
     print(f"----{question}----")
     for result in extractor.extract([{"name": question, "query": question, "question": question, "snippet": False}], data):
         print(f"{result['name']} {result['answer']}")
+
 
 run()

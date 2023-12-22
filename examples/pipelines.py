@@ -51,4 +51,5 @@ def run():
     print("\n---- Transcribed Text ----")
     print(transcription)
 
+
 run()

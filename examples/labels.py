@@ -26,7 +26,7 @@ def run():
         "With the 30 yard completion, down to the 10 yard line",
         "Drains the 3pt shot!!, 0:15 remaining in the game",
         "Intercepted! Drives down the court and shoots for the win",
-        "Massive dunk!!! they are now up by 15 with 2 minutes to go"
+        "Massive dunk!!! they are now up by 15 with 2 minutes to go",
     ]
 
     tags = ["Baseball", "Football", "Hockey", "Basketball"]
@@ -51,5 +51,6 @@ def run():
         label = tags[label[0]["id"]]
 
         print(f"{text:<75} {label}")
+
 
 run()

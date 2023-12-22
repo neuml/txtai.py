@@ -23,9 +23,7 @@ setup(
     package_dir={"": "src/python"},
     keywords="search embedding machine-learning nlp",
     python_requires=">=3.8",
-    install_requires=[
-        "aiohttp>=3.8.1"
-    ],
+    install_requires=["aiohttp>=3.8.1"],
     classifiers=[
         "License :: OSI Approved :: Apache Software License",
         "Operating System :: OS Independent",
