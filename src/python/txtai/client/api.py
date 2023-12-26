@@ -3,6 +3,7 @@ API module
 """
 
 import asyncio
+import os
 
 from urllib.parse import urlencode
 
@@ -14,16 +15,20 @@ class API:
     Base API class.
     """
 
-    def __init__(self, url):
+    def __init__(self, url=None, token=None):
         """
         Creates a new API instance.
 
         Args:
-            config: cluster configuration
+            url: API url
+            token: API token
         """
 
         # Server URL
-        self.url = url
+        self.url = url if url else os.environ.get("TXTAI_API_URL")
+
+        # Authorization token
+        self.token = token if token else os.environ.get("TXTAI_API_TOKEN")
 
     def execute(self, method, action, data=None):
         """
@@ -94,7 +99,7 @@ class API:
         parameters = urlencode(data) if data else None
         url = f"{url}?{parameters}" if parameters else url
 
-        async with session.get(url) as resp:
+        async with session.get(url, headers=self.headers()) as resp:
             return await resp.json()
 
     async def post(self, session, url, data):
@@ -110,5 +115,15 @@ class API:
             json results if any
         """
 
-        async with session.post(url, json=data) as resp:
+        async with session.post(url, json=data, headers=self.headers()) as resp:
             return await resp.json()
+
+    def headers(self):
+        """
+        Default HTTP headers.
+
+        Returns:
+            HTTP headers
+        """
+
+        return {"Authorization": f"Bearer {self.token}"} if self.token else None
