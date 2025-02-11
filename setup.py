@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(
     name="txtai.py",
-    version="8.2.0",
+    version="8.3.0",
     author="NeuML",
     description="Python client for txtai",
     long_description=DESCRIPTION,
