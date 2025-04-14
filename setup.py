@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(
     name="txtai.py",
-    version="8.4.0",
+    version="8.5.0",
     author="NeuML",
     description="Python client for txtai",
     long_description=DESCRIPTION,
@@ -22,7 +22,7 @@ setup(
     packages=find_packages(where="src/python"),
     package_dir={"": "src/python"},
     keywords="search embedding machine-learning nlp",
-    python_requires=">=3.9",
+    python_requires=">=3.10",
     install_requires=["aiohttp>=3.8.1"],
     classifiers=[
         "License :: OSI Approved :: Apache Software License",
