@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as f:
     DESCRIPTION = "".join([line for line in f if "gh-dark-mode-only" not in line])
 
 setup(
-    name="txtai.py",
+    name="txtai_py",
     version="9.1.0",
     author="NeuML",
     description="Python client for txtai",
