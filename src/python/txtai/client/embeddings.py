@@ -30,7 +30,7 @@ class Embeddings(API):
         data = {"query": query}
         if limit:
             data["limit"] = limit
-        if weights:
+        if weights is not None:
             data["weights"] = weights
         if index:
             data["index"] = index
@@ -57,7 +57,7 @@ class Embeddings(API):
         params = {"queries": queries}
         if limit:
             params["limit"] = limit
-        if weights:
+        if weights is not None:
             params["weights"] = weights
         if index:
             params["index"] = index
