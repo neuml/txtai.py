@@ -28,7 +28,7 @@ class Embeddings(API):
         # Build URL
         action = "search"
         data = {"query": query}
-        if limit:
+        if limit is not None:
             data["limit"] = limit
         if weights is not None:
             data["weights"] = weights
@@ -55,7 +55,7 @@ class Embeddings(API):
 
         # POST parameters
         params = {"queries": queries}
-        if limit:
+        if limit is not None:
             params["limit"] = limit
         if weights is not None:
             params["weights"] = weights
