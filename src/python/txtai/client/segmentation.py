@@ -34,4 +34,4 @@ class Segmentation(API):
             list of segmented text
         """
 
-        return self.execute("post", "batchsegment", {"texts": texts})
+        return self.execute("post", "batchsegment", texts)
