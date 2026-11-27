@@ -31,7 +31,7 @@ class Summary(API):
 
         return self.execute("get", "summary", params)
 
-    def batchsimilarity(self, texts, minlength=None, maxlength=None):
+    def batchsummary(self, texts, minlength=None, maxlength=None):
         """
         Runs a summarization model against a block of text.
 
@@ -51,3 +51,6 @@ class Summary(API):
             params["maxlength"] = maxlength
 
         return self.execute("post", "batchsummary", params)
+
+    # Keep the original public name for existing callers.
+    batchsimilarity = batchsummary
